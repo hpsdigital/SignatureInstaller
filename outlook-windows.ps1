@@ -7,7 +7,7 @@ $osVersion = [System.Environment]::OSVersion.Version.Major
 IF ($osVersion -ge 10) {
 	[Net.ServicePointManager]::SecurityProtocol = "Tls12, Tls11, Tls, Ssl3"
 } ELSE {
-	[Net.ServicePointManager]::SecurityProtocol = "Tls, Ssl3"
+	[Net.ServicePointManager]::SecurityProtocol = "Tls12, Tls, Ssl3"
 }
 
 $wc = New-Object System.Net.WebClient
