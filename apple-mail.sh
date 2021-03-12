@@ -10,6 +10,8 @@ load_signature_file() {
 	local SIGNATURES_PATH_ICLOUD_V4="$HOME/Library/Mobile Documents/com~apple~mail/Data/V4/Signatures/"
 	local SIGNATURES_PATH_ICLOUD_V3="$HOME/Library/Mobile Documents/com~apple~mail/Data/V3/Signatures/"
 	local SIGNATURES_PATH_ICLOUD_V2="$HOME/Library/Mobile Documents/com~apple~mail/Data/V2/Signatures/"
+	local SIGNATURES_PATH_NON_ICLOUD_V8="$HOME/Library/Mail/V8/MailData/Signatures/"
+	local SIGNATURES_PATH_NON_ICLOUD_V7="$HOME/Library/Mail/V7/MailData/Signatures/"
 	local SIGNATURES_PATH_NON_ICLOUD_V6="$HOME/Library/Mail/V6/MailData/Signatures/"
 	local SIGNATURES_PATH_NON_ICLOUD_V5="$HOME/Library/Mail/V5/MailData/Signatures/"
 	local SIGNATURES_PATH_NON_ICLOUD_V4="$HOME/Library/Mail/V4/MailData/Signatures/"
