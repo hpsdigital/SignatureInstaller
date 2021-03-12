@@ -3,6 +3,8 @@
 load_signature_file() {
 	echo "searching signature file..."
 
+	local SIGNATURES_PATH_ICLOUD_V8="$HOME/Library/Mobile Documents/com~apple~mail/Data/V8/Signatures/"
+	local SIGNATURES_PATH_ICLOUD_V7="$HOME/Library/Mobile Documents/com~apple~mail/Data/V7/Signatures/"
 	local SIGNATURES_PATH_ICLOUD_V6="$HOME/Library/Mobile Documents/com~apple~mail/Data/V6/Signatures/"
 	local SIGNATURES_PATH_ICLOUD_V5="$HOME/Library/Mobile Documents/com~apple~mail/Data/V5/Signatures/"
 	local SIGNATURES_PATH_ICLOUD_V4="$HOME/Library/Mobile Documents/com~apple~mail/Data/V4/Signatures/"
@@ -14,7 +16,13 @@ load_signature_file() {
 	local SIGNATURES_PATH_NON_ICLOUD_V3="$HOME/Library/Mail/V3/MailData/Signatures/"
 	local SIGNATURES_PATH_NON_ICLOUD_V2="$HOME/Library/Mail/V2/MailData/Signatures/"
 
-	if [ -d "$SIGNATURES_PATH_ICLOUD_V6" ]; then
+	if [ -d "$SIGNATURES_PATH_ICLOUD_V8" ]; then
+		echo "found iCloud signature directory"
+		local SIGNATURE_PATH="$SIGNATURES_PATH_ICLOUD_V8"
+	elif [ -d "$SIGNATURES_PATH_ICLOUD_V7" ]; then
+		echo "found iCloud signature directory"
+		local SIGNATURE_PATH="$SIGNATURES_PATH_ICLOUD_V7"
+	elif [ -d "$SIGNATURES_PATH_ICLOUD_V6" ]; then
 		echo "found iCloud signature directory"
 		local SIGNATURE_PATH="$SIGNATURES_PATH_ICLOUD_V6"
 	elif [ -d "$SIGNATURES_PATH_ICLOUD_V5" ]; then
@@ -29,6 +37,12 @@ load_signature_file() {
 	elif [ -d "$SIGNATURES_PATH_ICLOUD_V2" ]; then
 		echo "found iCloud signature directory"
 		local SIGNATURE_PATH="$SIGNATURES_PATH_ICLOUD_V2"
+	elif [ -d "$SIGNATURES_PATH_NON_ICLOUD_V8" ]; then
+		echo "found non-iCloud signature directory"
+		local SIGNATURE_PATH="$SIGNATURES_PATH_NON_ICLOUD_V8"
+	elif [ -d "$SIGNATURES_PATH_NON_ICLOUD_V7" ]; then
+		echo "found non-iCloud signature directory"
+		local SIGNATURE_PATH="$SIGNATURES_PATH_NON_ICLOUD_V7"
 	elif [ -d "$SIGNATURES_PATH_NON_ICLOUD_V6" ]; then
 		echo "found non-iCloud signature directory"
 		local SIGNATURE_PATH="$SIGNATURES_PATH_NON_ICLOUD_V6"
